@@ -37,7 +37,7 @@ function Init()
 			MONTH = date.getMonth() + 1;
 			DAY = date.getDate();
 		}
-		
+
 		Render();
 	} );
 }
@@ -149,7 +149,7 @@ function Render( year, month )
 	if ( month === undefined || month < 1 || 12 < month ) { month = MONTH; }
 	const hasHoliday = Holiday[ year ] !== undefined;
 	const days = CreateDays( year, month );
-	RenderDays( document.getElementById( 'cal' ), days, hasHoliday, year, month, DAY );
+	RenderDays( document.getElementById( 'cal' ), days, hasHoliday, year, month, year === YEAR && month === MONTH ? DAY : undefined );
 }
 document.addEventListener( 'DOMContentLoaded', Init() );
 	</script>

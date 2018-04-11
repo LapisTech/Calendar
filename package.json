@@ -1,0 +1,29 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "JP calendar",
+  "main": "tools/cal.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "cal": "node tools/cal.js",
+    "update": "node tools/update.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LapisTech/Calendar.git"
+  },
+  "author": "Hiroki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LapisTech/Calendar/issues"
+  },
+  "homepage": "https://github.com/LapisTech/Calendar#readme",
+  "dependencies": {
+    "@types/node": "^7.0.60",
+    "iconv-lite": "^0.4.21"
+  }
+}

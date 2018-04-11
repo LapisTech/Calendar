@@ -10,7 +10,7 @@ JP calendar
 
 Web版に関しては更新忘れてたら連絡して（）
 
-Web版: https://lapistech.github.io/Calendar
+Web版: https://lapistech.github.io/Calendar/
 
 # calコマンド代用
 

@@ -12,11 +12,23 @@ Web版に関しては更新忘れてたら連絡して（）
 
 Web版: https://lapistech.github.io/Calendar/
 
+## 更新
+
+```
+npm run update
+```
+
+これにより、`docs/holiday.YYYY.json` という年ごとの休日JSONと、`docs/holiday.json` というCSV内のデータを全部入れたJSONが出力されます。
+
+おそらく3年分くらいがCSVに入っているだろうということと、休日のログでも残しておこうかという意味を込めて前者の年ごとのファイルも出力しています。
+
 # calコマンド代用
 
 勉強ついでにcalコマンドも作ってみている（まだ不完全）
 
 ここに勉強の成果たるコマンドのオプション説明を書く。
+
+TODO:nexe使おうぜ
 
 # その他
 

@@ -157,9 +157,9 @@ document.addEventListener( 'DOMContentLoaded', Init );
 	<style type="text/css">
 body{ padding: 0; margin: 0; }
 #cal { margin: auto; width: 100vmin; height: 100vmin; padding: 0; }
-#cal > .header { width: 100%; height: 1.4em; line-height: 1.4em; text-align: center; position: relative; box-sizing: border-box; font-family: 'Sonsie One', cursive; }
+#cal > .header { width: 100%; height: calc(100vmin / 14); line-height: 1.4em; text-align: center; position: relative; box-sizing: border-box; font-family: 'Sonsie One', cursive; }
 #cal > .header.hasnoholiday:after { content: '※休日データなし'; display: inline; font-size: 0.5rem; }
-#cal > .header > button { border: 0; position: absolute; line-height: 1.4rem; border-radius: 50%; cursor: pointer; }
+#cal > .header > button { border: 0; position: absolute; line-height: 1.4rem; border-radius: 50%; cursor: pointer; width: calc(100vmin / 14); height: calc(100vmin / 14); }
 #cal > .header > :first-child { top: 0; left: 0; }
 #cal > .header > :last-child { top: 0; right: 0; }
 #cal > .cal { display: flex; flex-wrap: wrap; align-content: flex-start;  }
@@ -171,7 +171,7 @@ body{ padding: 0; margin: 0; }
 #cal > .cal > *.today { border: 0.1rem solid #c5d819; padding: 0; }
 #cal > .cal > * > * { display: block; position: relative; background-color: #f3f3f3; width: 100%; height: 100%;  overflow: hidden; }
 #cal > .cal > * > * > * { position: absolute; }
-#cal > .cal > * > * > *:first-child { font-size: 7vmin; bottom: -2.5vmin; right: -0.5vmin; font-family: 'Sonsie One', cursive; }
+#cal > .cal > * > * > *:first-child { font-size: 7vmin; bottom: -2.5vmin; right: 1vmin; letter-spacing: -1vmin; font-family: 'Sonsie One', cursive; }
 #cal > .cal > * > * > *:last-child:not(:first-child) { font-size: 3vmin; }
 	</style>
 </head>

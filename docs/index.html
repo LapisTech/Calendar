@@ -88,15 +88,16 @@ function RenderDays( element, list, hasHoliday, year, month, day )
 	if ( !hasHoliday ) { header.classList.add( 'hasnoholiday' ); }
 	const date = document.createElement( 'span' );
 	date.textContent = year + '/' + month;
+	header.appendChild( date );
+
+	const footer = document.createElement( 'div' );
+	footer.classList.add( 'footer' );
 	const prev = document.createElement( 'button' );
-	prev.textContent = '<<';
 	prev.addEventListener( 'click', () => { Render( month === 1 ? year - 1 : year, month === 1 ? 12 : ( month - 1 ) ); }, false );
 	const next = document.createElement( 'button' );
-	next.textContent = '>>';
 	next.addEventListener( 'click', () => { Render( month === 12 ? year + 1 : year, month === 12 ? 1 : ( month + 1 ) ); }, false );
-	header.appendChild( prev );
-	header.appendChild( date );
-	header.appendChild( next );
+	footer.appendChild( prev );
+	footer.appendChild( next );
 
 	const contents = document.createElement( 'div' );
 	contents.classList.add( 'cal' );
@@ -143,6 +144,7 @@ function RenderDays( element, list, hasHoliday, year, month, day )
 	for ( let i = children.length - 1 ; 0 <= i ; --i ) { element.removeChild( children[ i ] ); }
 	element.appendChild( header );
 	element.appendChild( contents );
+	element.appendChild( footer );
 }
 function Render( year, month )
 {
@@ -156,12 +158,15 @@ document.addEventListener( 'DOMContentLoaded', Init );
 	</script>
 	<style type="text/css">
 body{ padding: 0; margin: 0; }
-#cal { margin: auto; width: 100vmin; height: 100vmin; padding: 0; }
-#cal > .header { width: 100%; height: calc(100vmin / 14); line-height: 1.4em; text-align: center; position: relative; box-sizing: border-box; font-family: 'Sonsie One', cursive; }
+#cal { margin: auto; width: 100vmin; height: 100vmin; padding: 0; position: relative; }
+#cal > .header { width: 100%; height: calc(100vmin / 14); line-height: 1.4em; text-align: center; position: relative; box-sizing: border-box; font-family: 'Sonsie One', cursive; display: flex; align-items: center; justify-content: center; }
 #cal > .header.hasnoholiday:after { content: '※休日データなし'; display: inline; font-size: 0.5rem; }
-#cal > .header > button { border: 0; position: absolute; line-height: 1.4rem; border-radius: 50%; cursor: pointer; width: calc(100vmin / 14); height: calc(100vmin / 14); }
-#cal > .header > :first-child { top: 0; left: 0; }
-#cal > .header > :last-child { top: 0; right: 0; }
+#cal > .footer { position: absolute; bottom: 0; left: 0; width: 100%; height: calc(100vmin / 14); font-family: 'Sonsie One', cursive; }
+#cal > .footer > button { border: 0; display: block; float: left; cursor: pointer; width: 50%; height: 100%; padding: 0; background-color: #ccdbde; }
+#cal > .footer > button:hover { background-color: #6be4bc; }
+#cal > .footer > button:before { display: flex; align-items: center; justify-content: center; }
+#cal > .footer > :first-child:before { content: '<<'; }
+#cal > .footer > :last-child:before { content: '>>'; }
 #cal > .cal { display: flex; flex-wrap: wrap; align-content: flex-start;  }
 #cal > .cal > * { display: block; width: calc(100vmin / 7); height: calc(100vmin / 7); box-sizing: border-box; padding: 0.1rem; color: rgba( 0, 0, 0, 0.2 ); }
 #cal > .cal > *.nottarget { opacity: 0.5; }

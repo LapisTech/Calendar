@@ -1,18 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
-const http = require("http");
+const https = require("https");
 const stream = require("stream");
 const iconv = require("iconv-lite");
-const HOLIDAY_CSV = 'http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu_kyujitsu.csv';
+const HOLIDAY_CSV = 'https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv';
 function Get(url) {
     const buftrans = new stream.Transform({ transform(chunk, encoding, callback) { callback(null, chunk); } });
     return new Promise((resolve, reject) => {
         const bufs = [];
-        http.get(url, (response) => { response.pipe(buftrans); });
+        const request = https.request(url, (response) => { response.pipe(buftrans); });
         buftrans.on('data', (chunk) => { bufs.push(chunk); });
         buftrans.on('end', () => { resolve(Buffer.concat(bufs)); });
         buftrans.on('error', (error) => { reject(error); });
+        request.end();
     });
 }
 class LocalDate {
@@ -135,7 +136,7 @@ class LocalDate {
                 return;
             }
             const dn = line.split(',');
-            const datestr = dn[0].split('-');
+            const datestr = dn[0].split('/');
             const data = { date: this.date(parseInt(datestr[0]), parseInt(datestr[1]), parseInt(datestr[2])), name: dn[1] || '' };
             data.date.holiday = data.name;
             holidays.push(data);

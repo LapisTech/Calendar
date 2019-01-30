@@ -35,8 +35,8 @@ Main().then( ( holidays ) =>
 	} );
 
 	fs.writeFileSync( OUT_FILE, JSON.stringify( data ) );
-	Object.keys( data ).forEach( ( year: keyof CALENDER_HOLIDAY ) =>
+	Object.keys( data ).forEach( ( year ) =>
 	{
-		fs.writeFileSync( OUT_FILE.replace( /holiday\.json$/, 'holiday.' + year + '.json' ), JSON.stringify( data[ year ] ) );
+		fs.writeFileSync( OUT_FILE.replace( /holiday\.json$/, 'holiday.' + year + '.json' ), JSON.stringify( data[ <any>year ] ) );
 	} );
 } );

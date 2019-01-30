@@ -6,7 +6,8 @@ JP calendar
 
 日本の休日に対応しようとしたプログラマーは、まずハッピーマンデーに苦しめられ、次に毎年決まっているわけではない春分の日みたいなやつに苦しめられます。
 
-今回は、政府が公開している( http://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html )Shift-JISのCSV( http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu_kyujitsu.csv )をダウンロードして解析してUTF-8のJSONに出力の後、利用するプログラムを書きました。
+今回は、政府が公開している( https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html )Shift-JISのCSV( 
+https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv )をダウンロードして解析してUTF-8のJSONに出力の後、利用するプログラムを書きました。
 
 Web版に関しては更新忘れてたら連絡して（）
 
@@ -33,3 +34,9 @@ TODO:nexe使おうぜ
 # その他
 
 日本の休日固定日にしてほしい……後Shift-JIS滅びて……
+
+# 変更点メモ
+
+* 2019年の新カレンダー取得時にフォーマットが変更 - 2019/01/30
+    * 多少マシでシンプルなフォーマットになったり、HTTPSになってたり、いろいろ改善がある。
+    * しかし、政府はそういう改善しない前提で書いてたのでちょっとつらい。

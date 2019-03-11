@@ -11,7 +11,7 @@ https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv )をダウンロード�
 
 Web版に関しては更新忘れてたら連絡して（）
 
-Web版: https://lapistech.github.io/Calendar/
+Web版: https://cal.lapis.dev/
 
 ## 更新
 

@@ -22,5 +22,10 @@ jobs:
       - name: Update holiday
         run: npm run update
 
+      - name: git setting
+        run: |
+          git config --local user.email "azulitenet+github@gmail.com"
+          git config --local user.name "Hiroki"
+
       - name: Git push
-        run: git commit -m "Update holiday." && git push
+        run: git add . && git commit -m "Update holiday." && git push

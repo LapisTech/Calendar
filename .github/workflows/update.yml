@@ -30,5 +30,5 @@ jobs:
       - name: Git push
         run: |
           git add .
-          git commit -m "Update holiday."
-          if [ $? ];then git push;fi
+          git commit -m "Update holiday." | True
+          then git push | True

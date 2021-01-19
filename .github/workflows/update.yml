@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  schedule:
+    - cron:  '17 5 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup Node
+        uses: actions/setup-node@v2
+
+      - name: npm init
+        run: npm i
+
+      - name: Update holiday
+        run: npm run update
+
+      - name: Git push
+        run: git commit -m "Update holiday." && git push

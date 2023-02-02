@@ -17,8 +17,8 @@ await Promise.all(
 		console.log(year);
 		return Deno.writeTextFile(`docs/holiday.${year}.json`, JSON.stringify(data[year]));
 	}),
-	Deno.writeTextFile('docs/holiday.json', JSON.stringify(data)),
 );
+await Deno.writeTextFile('docs/holiday.json', JSON.stringify(data)),
 
 console.log('Complete.');
 

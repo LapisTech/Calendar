@@ -6,7 +6,7 @@ JP calendar
 
 日本の休日に対応しようとしたプログラマーは、まずハッピーマンデーに苦しめられ、次に毎年決まっているわけではない春分の日みたいなやつに苦しめられます。
 
-今回は、政府が公開している( https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html )Shift-JISのCSV( 
+今回は、政府が公開している( https://www8.cao.go.jp/chosei/shukujitsu/shukujitsu.csv )Shift-JISのCSV( 
 https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv )をダウンロードして解析してUTF-8のJSONに出力の後、利用するプログラムを書きました。
 
 GitHub Actionsにで毎月1日付近に自動更新するようにしましたが、仕様変更等で動かなくなることも考えられます。

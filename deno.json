@@ -1,0 +1,26 @@
+{
+	"tasks": {
+		"update": "deno run --allow-read --allow-write --allow-net tools/update.ts"
+	},
+	"lint": {
+		"files": {
+			"include": ["./tools"]
+		},
+		"rules": {
+		  "tags": ["recommended"],
+		  "include": [],
+		  "exclude": ["require-await"]
+		}
+	},
+	"fmt": {
+		"files": {
+			"include": ["./tools"]
+		},
+		"options": {
+			"useTabs": true,
+			"indentWidth": 4,
+			"lineWidth": 160,
+			"singleQuote": true
+		}
+	}
+}

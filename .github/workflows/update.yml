@@ -12,20 +12,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
 
-      - name: setup Node
-        uses: actions/setup-node@v2
-
-      - name: npm init
-        run: npm i
-
-      - name: Update holiday
-        run: npm run update
+      - name: update
+        run: deno task update
 
       - name: git setting
         run: |
-          git config --local user.email "azulitenet+github@gmail.com"
-          git config --local user.name "Hiroki"
+          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --local user.name "${GITHUB_ACTOR}"
 
       - name: Git push
         run: |

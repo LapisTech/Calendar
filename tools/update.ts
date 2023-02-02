@@ -12,13 +12,13 @@ await fetch(HOLIDAY_CSV).then((response) => {
 const localDate = await new LocalDate().loadFromCSV('holiday.csv');
 const data = localDate.getAllHolidays();
 
-await Promise.all(
-	Object.keys(data).map((year) => {
+await Promise.all([
+	... Object.keys(data).map((year) => {
 		console.log(year);
 		return Deno.writeTextFile(`docs/holiday.${year}.json`, JSON.stringify(data[year]));
 	}),
-);
-await Deno.writeTextFile('docs/holiday.json', JSON.stringify(data)),
+	await Deno.writeTextFile('docs/holiday.json', JSON.stringify(data)),
+]);
 
 console.log('Complete.');
 

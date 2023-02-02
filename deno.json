@@ -1,6 +1,7 @@
 {
 	"tasks": {
-		"update": "deno run --allow-read --allow-write --allow-net tools/update.ts"
+		"update": "deno run --allow-read --allow-write --allow-net tools/update.ts",
+		"tests": "deno test --allow-read tools/"
 	},
 	"lint": {
 		"files": {

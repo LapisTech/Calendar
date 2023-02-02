@@ -6,7 +6,7 @@ JP calendar
 
 日本の休日に対応しようとしたプログラマーは、まずハッピーマンデーに苦しめられ、次に毎年決まっているわけではない春分の日みたいなやつに苦しめられます。
 
-今回は、政府が公開している( https://www8.cao.go.jp/chosei/shukujitsu/shukujitsu.csv )Shift-JISのCSV( 
+今回は、政府が公開している( https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html )Shift-JISのCSV( 
 https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv )をダウンロードして解析してUTF-8のJSONに出力の後、利用するプログラムを書きました。
 
 GitHub Actionsにで毎月1日付近に自動更新するようにしましたが、仕様変更等で動かなくなることも考えられます。
@@ -17,7 +17,7 @@ Web版: https://cal.lapis.dev/
 ## 更新
 
 ```
-npm run update
+deno task update
 ```
 
 これにより、`docs/holiday.YYYY.json` という年ごとの休日JSONと、`docs/holiday.json` というCSV内のデータを全部入れたJSONが出力されます。
@@ -38,6 +38,9 @@ TODO:nexe使おうぜ
 
 # 変更点メモ
 
+* URL変更に伴いついでにDeno実行に変更 - 2023/02/02
+    * https://www8.cao.go.jp/chosei/shukujitsu/shukujitsu.csv → https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv
+    * 個人的にNode.jsをやめて全面的にDenoへ移行している。
 * GitHub Actionsによる自動更新処理の追加 - 2021/01/19
     * 毎月1日頃に更新する処理を追加。
 * 1955年からのデータが追加 - 2019/08/22
